@@ -1,0 +1,108 @@
+
+    <style>
+
+
+
+
+        .video-wrapper-4 {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            perspective: 1000px; /* depth */
+            z-index: 0;
+            width: 60%;
+                        aspect-ratio: 16/11.2;
+
+
+        }
+
+        .video-wrapper-3{
+            width: 40%;
+
+            position: absolute;
+            top: 2%;
+            left: 10%;
+            z-index: 100;
+            perspective: 1000px; /* depth */
+            aspect-ratio: 16/9;
+            
+
+
+        }
+
+        .video-wrapper-3 iframe {
+            transform: rotateY(10deg) rotateX(2deg);
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 2vw 2vw 0px;
+        }
+
+        #video4{
+            z-index: 1;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/11.2;
+
+        }
+
+        #video3{
+            z-index: 100;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+
+
+        }
+
+
+    </style>
+
+<div class='container-div'>
+
+
+
+        <div class="section-graphics">
+                <div class="video-wrapper-3">
+                    <iframe id="video3"
+                    src="https://player.vimeo.com/video/1114304424?&muted=1&background=1" 
+                        frameborder="0" >
+                    </iframe>
+                </div>
+                <div class="video-wrapper-4">
+                    <iframe id="video4"
+                    src="https://player.vimeo.com/video/1114322012?&muted=1&background=1" 
+                     frameborder="0" >
+                </iframe>
+
+                </div>
+        </div>
+</div>
+
+</div>
+
+
+<script>
+  var player3 = new Vimeo.Player(document.getElementById('video3'));
+  var player4 = new Vimeo.Player(document.getElementById('video4'));
+
+  Promise.all([player3.ready(), player4.ready()]).then(() => {
+    player3.setCurrentTime(0);
+    player3.pause();
+    player4.setCurrentTime(0);
+    player4.pause();
+    setTimeout( () => { 
+        player3.play()
+        player4.play()
+        setInterval( () => {
+            player3.setCurrentTime(0);
+            player4.setCurrentTime(0);
+            player3.play()
+            player4.play()
+        }, 21000)
+    }, 3000 )
+
+
+  });
+
+
+</script>

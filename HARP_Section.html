@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<style>
+
+    .container-div{
+    overflow-y: visible;
+    width: 100vw;
+    overflow-x: hidden;
+    /* height: 46vw; */
+    min-height: fit-content;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    }
+
+
+    .section-header > * {
+    margin: 1px;
+    max-width: min(80vw, 600px);
+    }
+        .section-header{
+            width: 100vw;
+            height: fit-content;
+        }
+        .section-graphics{
+            position: relative;
+            width: 100%;
+            /* height: fit-content; */
+            /* display: flex;
+            justify-content: center;
+            align-items: flex-start; */
+            min-height: 30vw;
+            height: fit-content;
+            max-width: 1600px;
+
+        }
+
+
+        @media(max-width: 1600px){
+         .section-graphics{
+            min-height: 33vw;
+         }
+        }
+
+        @media(max-width: 725px){
+        .section-header{
+          height: 0px;
+
+        }
+        .section-graphics{
+        height:fit-content;
+        }
+        .container-div{
+          height: fit-content;
+          min-height: 0px
+
+        }
+        }
+
+        .centroid{
+            /* position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%; */
+        }
+
+        .video-wrapper-1 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            perspective: 1000px; /* depth */
+            z-index: 0;
+            width: 60%;
+            aspect-ratio: 16/9;
+
+        }
+
+        .video-wrapper-2{
+            width: 40%;
+
+            position: absolute;
+            top: 2%;
+            right: 10%;
+            z-index: 100;
+            perspective: 1000px; /* depth */
+            aspect-ratio: 16/11.2;
+
+
+        }
+
+        .video-wrapper-2 iframe {
+            transform: rotateY(-10deg) rotateX(2deg);
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 2vw 2vw 0px;
+        }
+
+        #video1{
+            z-index: 1;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+
+        }
+
+        #video2{
+            z-index: 100;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/11.2;
+
+        }
+
+
+    </style>
+
+<div class='container-div'>
+
+
+        <!-- <div class="section-header">
+            <h2>Spatial Input Controllers</h2>
+            <h4>Lowering the barriers to complex robotic control and teleoperation</h4>
+            <p>Inverse3 and HARP comprise the universal robotics control interface that promotes usability, accessibility and unparalleled precision.</p>
+        </div> -->
+
+        <div class="section-graphics">
+            <!-- <div class="centroid"> -->
+                <div class="video-wrapper-1">
+                    <iframe id="video1"
+                    src="https://player.vimeo.com/video/1114015658?&muted=1&background=1" 
+                        frameborder="0" >
+                    </iframe>
+                </div>
+            
+                
+                <div class="video-wrapper-2">
+                    <iframe id="video2"
+                    src="https://player.vimeo.com/video/1114015640?&muted=1&background=1" 
+                     frameborder="0" >
+                </iframe>
+
+                </div>
+        <!-- </div> -->
+    </div>
+</div>
+
+</div>
+
+
+</body>
+</html>
+
